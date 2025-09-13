@@ -1,10 +1,25 @@
-const express = requires('express');
+const express = require('express');
 const router = express.Router();
 
 //Routes
+
+
 router.get('', (req, res) => {
-    res.send("Hello World");
+    const locals = {
+        title: "NodeJs Blog", 
+        description: "Simple blog created with Node js, Express, and mongoDB."
+    }
+
+    res.render('index', { locals });
 });
+
+router.get('/about', (req, res) => {
+    res.render('about');
+});
+
+
+
+
 
 
 module.exports = router;
