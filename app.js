@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 // Middleware
-app.use(express.static('public')); // Serves static files from the 'public' directory
+app.use(express.static('public'));
 
 // Body parsers to read data from forms and JSON payloads
 app.use(express.urlencoded({ extended: true }));

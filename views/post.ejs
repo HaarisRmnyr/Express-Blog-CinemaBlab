@@ -1,1 +1,18 @@
-<h>post</h>
+<h1>Post a Blab</h1>
+<div class="prompts">
+    <form action="/post" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Blab Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="body" class="form-label">Blab Content</label>
+            <textarea class="form-control" id="body" name="body" rows="3" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Blab Poster</label>
+            <input type="file" class="form-control" id="image" name="image" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
