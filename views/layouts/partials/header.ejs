@@ -2,7 +2,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">CinemaBlab</a>
+    <a class="navbar-brand" href="/index">CinemaBlab</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -14,6 +14,8 @@
         <li class="nav-item">
           <a class="nav-link" href="/post">Post</a>
         </li>
+
+        <% if (isLoggedIn) { %>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Account
@@ -22,13 +24,15 @@
             <li><a class="dropdown-item" href="/profile">Profile</a></li>
             <li><a class="dropdown-item" href="/settings">Account Settings</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Log-out</a></li>
+            <li><a class="dropdown-item" href="/logout">Log-out</a></li>
           </ul>
         </li>
-            
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Link</a>
-        </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a class="nav-link" href="/sign-in">Sign-In</a>
+          </li>
+        <% } %>
+      
       </ul>
       <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -37,10 +41,4 @@
     </div>
   </div>
 </nav>
-
-
-
-
-
-
 </header>
