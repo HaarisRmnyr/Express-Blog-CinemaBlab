@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // Routes
-router.get('/index', async (req, res) => {
+router.get(['/index', '/'], async (req, res) => {
     try {
         const locals = {
             title: "CinemaBlab", 
@@ -100,5 +100,17 @@ router.get('/sign-in', (req, res) => {
     const isLoggedIn = req.session.userId ? true : false;
     res.render('sign-in', { locals, isLoggedIn });
 });
+
+router.get('/sign-up', (req, res) => {
+    const locals = {
+        title: "Sign-Up",
+        description: "Register an account."
+    };
+    const isLoggedIn = req.session.userId ? true : false;
+    res.render('sign-up', { locals, isLoggedIn });
+});
+
+
+
 
 module.exports = router;

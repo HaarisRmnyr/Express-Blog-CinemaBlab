@@ -44,6 +44,7 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.use('/', require('./server/routes/main'));
+app.use('/', require('./server/routes/auth'));
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);

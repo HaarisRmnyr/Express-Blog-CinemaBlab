@@ -1,5 +1,5 @@
 body{
-    height: 100%;
+    min-height: 100%;
     background-color: white;
     margin: 0;
 }
@@ -20,5 +20,9 @@ body{
 .post-card:hover {
     transform: scale(1.05); /* Slightly lift the card on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.btn-primary{
+    margin-top: 20px;
 }
 
