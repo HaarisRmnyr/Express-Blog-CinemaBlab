@@ -26,7 +26,7 @@ router.get(['/index', '/'], async (req, res) => {
         };
         const isLoggedIn = req.session.userId ? true : false;
         
-        const posts = await Post.find().sort({ createdAt: -1 });
+        const posts = await Post.find().sort({ createdAt: -1 }).populate('author');
 
         res.render('index', { locals, isLoggedIn, posts });
     } catch (error) {
@@ -41,6 +41,7 @@ router.get('/post', (req, res) => {
         description: "Upload Content here."
     };
     const isLoggedIn = req.session.userId ? true : false;
+    
     res.render('post', { locals, isLoggedIn });
 });
 
@@ -60,6 +61,7 @@ router.post('/post', upload.single('image'), async (req, res) => {
 
         const newPost = new Post({
             title: title,
+            author: req.session.userId,
             image: image,
             body: body
         });
