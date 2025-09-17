@@ -7,6 +7,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
+const react = require('react');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
